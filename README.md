@@ -16,7 +16,8 @@ Knowledge distillation transfers information from a large model (teacher) to a s
 
 The student minimizes:
 
-L = α CE(y, p_s) + (1 − α) T² KL( softmax(z_t / T) || softmax(z_s / T) )
+L = α * CE(y, p_s) + (1 - α) * T^2 * KL( softmax(z_t / T) || softmax(z_s / T) )
+
 
 Where:
 
@@ -24,18 +25,6 @@ Where:
 * T is the softmax temperature
 * CE is cross-entropy with ground-truth labels
 * KL is the distillation loss between teacher and student logits
-
----
-
-# Project Structure
-
-KnowledgeDistillation/
-├── train_teacher.py
-├── train_student.py
-├── distill_student.py
-├── utils.py
-├── runs/
-└── README.md
 
 ---
 
